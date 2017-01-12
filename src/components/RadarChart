@@ -1,0 +1,22 @@
+import React from 'react';
+import { Radar } from 'react-chartjs';
+
+function stats(stats) {
+    return {
+        labels: ["PTS", "AST", "REB"],
+        datasets: [
+            {
+                label: "Stats",
+                fillColor: ["rgba(0,10,220,0.5)"],
+                strokeColor: "rgb(255, 0, 0)",
+                data: [stats[0], stats[1], stats[2]]
+            }
+        ]
+    }
+}
+
+export default (props) => {
+    return (
+        <Radar data={stats(props.stats)} width='300' height='125' redraw/>
+    );
+}
