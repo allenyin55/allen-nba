@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const ROOT_URL = `https://stats.nba.com/stats/commonplayerinfo/?PlayerID=`;
-const STAT_URL = `https://stats.nba.com/stats/playercareerstats/?PerMode=PerGame&PlayerID=`;
-const PLAYERID_URL = "https://allen-nba-api.herokuapp.com/api/players";
+const ROOT_URL = `http://stats.nba.com/stats/commonplayerinfo/?PlayerID=`;
+const STAT_URL = `http://stats.nba.com/stats/playercareerstats/?PerMode=PerGame&PlayerID=`;
+const PLAYERID_URL = "http://allen-nba-api.herokuapp.com/api/players";
 const PLAYERID_URL_DEV =  "http://localhost:3000/api/players";
 
 export const FETCH_PLAYER = 'FETCH_PLAYER';
