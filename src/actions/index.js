@@ -7,17 +7,17 @@ const PLAYERID_URL_DEV =  "http://localhost:3000/api/players";
 
 export const FETCH_PLAYER = 'FETCH_PLAYER';
 export const FETCH_STAT = 'FETCH_STAT';
-export const FETCH_PLAYERID = 'FETCH_PLAYERID'
 
-export function fetchPlayerId(term) {
-    const request = axios.post(PLAYERID_URL,term);
+export function fetchPlayer(term) {
+    const request = axios.post(PLAYERID_URL_DEV,term);
 
     return{
-        type: FETCH_PLAYERID,
+        type: FETCH_PLAYER,
         payload: request
     }
 }
 
+/*
 export function fetchPlayer(playerId){
 
     const url = `${ROOT_URL}${playerId}`;
@@ -30,6 +30,7 @@ export function fetchPlayer(playerId){
         // Then it unwraps the promise, and dispatches it to the reducers
     };
 }
+*/
 
 export function fetchStat(playerId) {
 

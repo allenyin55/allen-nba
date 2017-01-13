@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPlayer, fetchStat, fetchPlayerId } from '../actions/index';
+import { fetchPlayer, fetchStat } from '../actions/index';
 
 class SearchBar extends Component {
     constructor(props){
@@ -24,11 +24,8 @@ class SearchBar extends Component {
             name: this.state.term
         };
 
-        this.props.fetchPlayerId(term)
-            .then(()=>{
-                this.props.fetchPlayer(this.props.player.personId);
-                this.setState({term: ''})
-            });
+        this.props.fetchPlayer(term);
+        this.setState({term: ''})
     }
 
     render(){
@@ -53,7 +50,7 @@ function mapStateToProps({player}) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators ( {fetchPlayer, fetchStat, fetchPlayerId}, dispatch)
+    return bindActionCreators ( {fetchPlayer, fetchStat }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

@@ -1,10 +1,8 @@
 const express  = require('express');
 const path = require('path');
 const port = process.env.PORT || 8080;
-const cors = require('cors')
 const app = express();
 
-app.use(cors());
 app.set('trust proxy');
 
 app.use(express.static(__dirname));
