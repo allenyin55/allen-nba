@@ -17,7 +17,7 @@ class PlayerList extends Component {
         const headShotUrl = `http://stats.nba.com/media/players/230x185/${playerId}.png`
 
         return(
-            <tr>
+            <tr key={playerId}>
                 <td><image src={headShotUrl} style={{width: 145 + 'px'}}/></td>
                 <td>{name}</td>
                 <td>{height}</td>
@@ -40,7 +40,7 @@ class PlayerList extends Component {
                 </tr>
                 </thead>
                 <tbody>
-                {this.props.player.map(this.renderPlayer)}
+                {this.props.player.all.map(this.renderPlayer)}
                 </tbody>
             </table>
         )

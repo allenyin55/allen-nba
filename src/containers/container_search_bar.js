@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPlayer, fetchStat } from '../actions/index';
-import players from '!json!../../data/players.json';
-import jsonQuery from 'json-query';
+import { fetchPlayer, fetchStat, fetchPlayerId } from '../actions/index';
 
 class SearchBar extends Component {
     constructor(props){
@@ -22,16 +20,15 @@ class SearchBar extends Component {
     onFormSubmit(event){
         event.preventDefault();
 
-        const data = {
-            people: players
+        let term = {
+            name: this.state.term
         };
 
-        let personId = jsonQuery(`people[name=${this.state.term}].personId`, {
-            data: data
-        }).value;
-
-        this.props.fetchPlayer(personId);
-        this.setState({term: ''})
+        this.props.fetchPlayerId(term)
+            .then(()=>{
+                this.props.fetchPlayer(this.props.player.personId);
+                this.setState({term: ''})
+            });
     }
 
     render(){
@@ -51,8 +48,12 @@ class SearchBar extends Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators ( {fetchPlayer, fetchStat}, dispatch)
+function mapStateToProps({player}) {
+    return {player};
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators ( {fetchPlayer, fetchStat, fetchPlayerId}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
