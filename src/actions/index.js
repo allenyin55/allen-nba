@@ -9,7 +9,7 @@ export const FETCH_STANDINGS = 'FETCH_STANDINGS';
 export const FETCH_GAMES = 'FETCH_GAMES';
 
 export function fetchPlayer(term) {
-    const request = axios.post(`${ALLEN_NBA_URL_DEV}/players`,term);
+    const request = axios.post(`${ALLEN_NBA_URL}/players`,term);
 
     return{
         type: FETCH_PLAYER,
@@ -18,7 +18,7 @@ export function fetchPlayer(term) {
 }
 
 export function fetchStandings() {
-    const request = axios.get(`${ALLEN_NBA_URL_DEV}/standings`);
+    const request = axios.get(`${ALLEN_NBA_URL}/standings`);
 
     return{
         type: FETCH_STANDINGS,
@@ -28,7 +28,7 @@ export function fetchStandings() {
 }
 
 export function fetchGames() {
-    const request = axios.get(`${ALLEN_NBA_URL_DEV}/games`);
+    const request = axios.get(`${ALLEN_NBA_URL}/games`);
 
     return{
         type: FETCH_GAMES,
