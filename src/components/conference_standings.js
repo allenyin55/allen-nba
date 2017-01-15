@@ -1,6 +1,8 @@
 import React from 'react';
 let rank = 0;
 
+const url = "https://allen-nba-api.herokuapp.com";
+
 export default class RenderConference extends React.Component{
 
     renderList(singleTeamData){
@@ -16,7 +18,7 @@ export default class RenderConference extends React.Component{
             <tr key={singleTeamData.id}>
                 <td>{rank}</td>
                 <td style={style}>
-                    <image src={`http://localhost:3000/images/${getTeamById[singleTeamData.id].abbr}.png`} className="teamIcon"/>
+                    <image src={`${url}/images/${getTeamById[singleTeamData.id].abbr}.png`} className="teamIcon"/>
                     <div>{getTeamById[singleTeamData.id].team}</div>
                 </td>
                 <td>{team_stats.wins}</td>

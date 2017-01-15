@@ -2,6 +2,8 @@
 import React from 'react';
 import teamMap from '../utils/team_map';
 
+const url = "https://allen-nba-api.herokuapp.com"
+
 export default class GameWidget extends React.Component{
 
     constructor (props) {
@@ -60,7 +62,7 @@ export default class GameWidget extends React.Component{
                     <tbody className="d-flex justify-content-between">
                     <tr>
                         <td>
-                            <image src={`http://localhost:3000/images/${game.home.team_key.toLowerCase()}.png`} className="teamIcon"/>{ game.home.nickname }
+                            <image src={`${url}/images/${game.home.team_key.toLowerCase()}.png`} className="teamIcon"/>{ game.home.nickname }
                         </td>
                         <td>
                             {game.home.score}
@@ -74,7 +76,7 @@ export default class GameWidget extends React.Component{
                             {game.visitor.score}
                         </td>
                         <td>
-                            <image src={`http://localhost:3000/images/${game.visitor.team_key.toLowerCase()}.png`} className="teamIcon"/>{ game.visitor.nickname}
+                            <image src={`${url}/images/${game.visitor.team_key.toLowerCase()}.png`} className="teamIcon"/>{ game.visitor.nickname}
                         </td>
                     </tr>
                     </tbody>
