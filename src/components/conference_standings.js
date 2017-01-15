@@ -21,7 +21,7 @@ export default class RenderConference extends React.Component{
                 </td>
                 <td>{team_stats.wins}</td>
                 <td>{team_stats.losses}</td>
-                <td>{team_stats.gb_div}</td>
+                <td>{team_stats.gb_conf}</td>
                 <td>{team_stats.l10}</td>
             </tr>
         )
