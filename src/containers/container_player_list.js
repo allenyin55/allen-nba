@@ -29,7 +29,7 @@ class PlayerList extends Component {
 
     render(){
         return(
-            <table className="table table-hover">
+            <table className="table table-hover" id="playerList">
                 <thead>
                 <tr>
                     <th>Head Shot</th>

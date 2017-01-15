@@ -1,13 +1,19 @@
 .input-group {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
-td, th {
+#standingsTable, #playerList td, th {
     vertical-align: middle !important;
     text-align: center !important;
 }
 
-td:first-of-type{
+#gamesTable td {
+    vertical-align: middle;!important;
+}
+
+
+
+#playerList td:first-of-type{
     height: 200px;
     width: 250px;
 }
@@ -15,4 +21,13 @@ td:first-of-type{
 .chartContainer{
     width:250px !important;
 }
+
+#backToIndexBtn{
+    margin:10px;
+}
+
+.teamIcon{
+    width:35px;
+}
+
 

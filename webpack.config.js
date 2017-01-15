@@ -24,7 +24,7 @@ module.exports = {
   devServer: {
       headers: { "Access-Control-Allow-Origin": "*" },
       historyApiFallback: true
-  },
+  }/*,
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
@@ -32,5 +32,5 @@ module.exports = {
             }
         }),
         new webpack.optimize.DedupePlugin()
-    ]
+    ]*///uncomment when in production
 };

@@ -9,7 +9,7 @@ export default class SearchPlayers extends Component {
     render() {
         return (
             <div>
-                <Link to="/" className="btn btn-primary">Back to Index</Link>
+                <Link to="/" className="btn btn-primary" id="backToIndexBtn">Back to Index</Link>
                 <SearchBar />
                 <PlayerList />
             </div>
